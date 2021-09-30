@@ -1,0 +1,99 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 22/06/2016 15:25
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-angry-eye:before { content: "\f100"; }
+.flaticon-blink:before { content: "\f101"; }
+.flaticon-cat-eye:before { content: "\f102"; }
+.flaticon-crying:before { content: "\f103"; }
+.flaticon-crying-eye:before { content: "\f104"; }
+.flaticon-disgusted-eye:before { content: "\f105"; }
+.flaticon-exhausted-eye:before { content: "\f106"; }
+.flaticon-eye:before { content: "\f107"; }
+.flaticon-eye-drop:before { content: "\f108"; }
+.flaticon-eye-iris:before { content: "\f109"; }
+.flaticon-eye-line:before { content: "\f10a"; }
+.flaticon-eye-with-dollar-symbol:before { content: "\f10b"; }
+.flaticon-eye-with-driaphragm:before { content: "\f10c"; }
+.flaticon-girl-eye:before { content: "\f10d"; }
+.flaticon-girl-eye-1:before { content: "\f10e"; }
+.flaticon-hatred-eye:before { content: "\f10f"; }
+.flaticon-hearth-shaped-eye:before { content: "\f110"; }
+.flaticon-invisible:before { content: "\f111"; }
+.flaticon-lock-shape-eye:before { content: "\f112"; }
+.flaticon-looking-up:before { content: "\f113"; }
+.flaticon-puffy-eye:before { content: "\f114"; }
+.flaticon-sad-eye:before { content: "\f115"; }
+.flaticon-scowl-eye:before { content: "\f116"; }
+.flaticon-shocked-eye:before { content: "\f117"; }
+.flaticon-sick-eye:before { content: "\f118"; }
+.flaticon-side-look:before { content: "\f119"; }
+.flaticon-sleepy-eye:before { content: "\f11a"; }
+.flaticon-tired-eye:before { content: "\f11b"; }
+.flaticon-zoom-in-eye:before { content: "\f11c"; }
+.flaticon-zoom-out-eye:before { content: "\f11d"; }
+    
+    $font-Flaticon-angry-eye: "\f100";
+    $font-Flaticon-blink: "\f101";
+    $font-Flaticon-cat-eye: "\f102";
+    $font-Flaticon-crying: "\f103";
+    $font-Flaticon-crying-eye: "\f104";
+    $font-Flaticon-disgusted-eye: "\f105";
+    $font-Flaticon-exhausted-eye: "\f106";
+    $font-Flaticon-eye: "\f107";
+    $font-Flaticon-eye-drop: "\f108";
+    $font-Flaticon-eye-iris: "\f109";
+    $font-Flaticon-eye-line: "\f10a";
+    $font-Flaticon-eye-with-dollar-symbol: "\f10b";
+    $font-Flaticon-eye-with-driaphragm: "\f10c";
+    $font-Flaticon-girl-eye: "\f10d";
+    $font-Flaticon-girl-eye-1: "\f10e";
+    $font-Flaticon-hatred-eye: "\f10f";
+    $font-Flaticon-hearth-shaped-eye: "\f110";
+    $font-Flaticon-invisible: "\f111";
+    $font-Flaticon-lock-shape-eye: "\f112";
+    $font-Flaticon-looking-up: "\f113";
+    $font-Flaticon-puffy-eye: "\f114";
+    $font-Flaticon-sad-eye: "\f115";
+    $font-Flaticon-scowl-eye: "\f116";
+    $font-Flaticon-shocked-eye: "\f117";
+    $font-Flaticon-sick-eye: "\f118";
+    $font-Flaticon-side-look: "\f119";
+    $font-Flaticon-sleepy-eye: "\f11a";
+    $font-Flaticon-tired-eye: "\f11b";
+    $font-Flaticon-zoom-in-eye: "\f11c";
+    $font-Flaticon-zoom-out-eye: "\f11d";
