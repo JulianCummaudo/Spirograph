@@ -1,3 +1,5 @@
+package Samt.Spiro.Helpers;
+
 
 import java.awt.Component;
 import java.awt.Graphics;

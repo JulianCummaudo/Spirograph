@@ -1,21 +1,16 @@
+package Samt.Spiro.Graphics;
+
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.geom.Point2D;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
- * @author julian.cummaudo
+ * @version 14.10.2021
+ * @author Julian Cummaudo
  */
 public class Canvas extends javax.swing.JPanel {
 
@@ -104,7 +99,7 @@ public class Canvas extends javax.swing.JPanel {
                 (pc-pm)*Math.sin(angolo)-offset*Math.sin(((pc-pm)/pm)*angolo)
             );
     }
-     // </editor-fold>
+    // </editor-fold>
     
     /**
     * Interpolating method
@@ -113,7 +108,6 @@ public class Canvas extends javax.swing.JPanel {
     * @param count count of output interpolated numbers
     * @return array of interpolated number with specified count
     */
-
     public static double[] interpolate(double start, double end, int count) {
         if (count < 2) {
             throw new IllegalArgumentException("interpolate: illegal count!");
