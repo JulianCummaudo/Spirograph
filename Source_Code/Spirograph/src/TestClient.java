@@ -1,8 +1,4 @@
-import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.geom.Point2D;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -10,65 +6,42 @@ import javax.swing.JFrame;
  * @author julian.cummaudo
  */
 public class TestClient extends javax.swing.JFrame {
-
-        
-    private final Double RAGGIO_PM = 750.0;
-    private final Double RAGGIO_PC = 40.0;
-    private final Double OFFSET = 50.0;
-    private boolean insideMode = true;
-    private Point2D.Double current = new Point2D.Double(0,0);
     
     
-    
+    /**
+     * 
+     * @param title 
+     */
     public TestClient(String title){
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1500,1000);
     }
 
-    public Point2D.Double getOutsidePoint(Double pc, Double pm, 
-            Double offset, Double angolo){
-        
-        angolo = Math.toRadians(angolo);
-        return new Point2D.Double(
-                (pc+pm)*Math.cos(angolo)-offset*Math.cos(((pc+pm)/pm)*angolo),
-                (pc+pm)*Math.sin(angolo)-offset*Math.sin(((pc+pm)/pm)*angolo)
-            );
-    }
+    /*
     
-    public Point2D.Double getInsidePoint(Double pc, Double pm, 
-            Double offset, Double angolo){
-        
-        angolo = Math.toRadians(angolo);
-        return new Point2D.Double(
-                (pc-pm)*Math.cos(angolo)+offset*Math.cos(((pc-pm)/pm)*angolo),
-                (pc-pm)*Math.sin(angolo)-offset*Math.sin(((pc-pm)/pm)*angolo)
-            );
-    }
+    /*  **
+        * Interpolating method
+        * @param start start of the interval
+        * @param end end of the interval
+        * @param count count of output interpolated numbers
+        * @return array of interpolated number with specified count
+        *
     
-    public void paint(Graphics g){
-        g.setColor(Color.BLACK);
-        int center = (int)(RAGGIO_PC*2+RAGGIO_PM*2);
-        for(Double i = 0.0; i < 12000; i++){
-            if(insideMode){
-                current = getInsidePoint(RAGGIO_PC, RAGGIO_PM, OFFSET, i);
-            }else{
-                current = getOutsidePoint(RAGGIO_PC, RAGGIO_PM, OFFSET, i);
+        public static double[] interpolate(double start, double end, int count) {
+            if (count < 2) {
+                throw new IllegalArgumentException("interpolate: illegal count!");
             }
-            g.drawLine((int)current.getX()+center, center+(int)current.getY(),
-                    (int)current.getX()+center, center+(int)current.getY());
-            
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(TestClient.class.getName()).log(Level.SEVERE, null, ex);
+            double[] array = new double[count + 1];
+            for (int i = 0; i <= count; ++ i) {
+                array[i] = start + i * (end - start) / count;
             }
+            return array;
         }
-    }
-
+    */
     
     
-    /**0
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -109,6 +82,7 @@ public class TestClient extends javax.swing.JFrame {
      * Creates new form TestClient
      */
     public TestClient() {
+        
         initComponents();
     }
 
@@ -121,33 +95,73 @@ public class TestClient extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jColorChooser1 = new javax.swing.JColorChooser();
+        canvas1 = new Canvas();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Spirograph");
+        setPreferredSize(new java.awt.Dimension(1280, 720));
 
-        jButton1.setText("jButton1");
+        canvas1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout canvas1Layout = new javax.swing.GroupLayout(canvas1);
+        canvas1.setLayout(canvas1Layout);
+        canvas1Layout.setHorizontalGroup(
+            canvas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 591, Short.MAX_VALUE)
+        );
+        canvas1Layout.setVerticalGroup(
+            canvas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jButton1.setFont(new java.awt.Font("SansSerif", 1, 10)); // NOI18N
+        jButton1.setText("Pc");
+        jButton1.setPreferredSize(new java.awt.Dimension(25, 25));
+
+        jButton2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jButton2.setLabel("Pm");
+        jButton2.setPreferredSize(new java.awt.Dimension(25, 25));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(118, 118, 118)
-                .addComponent(jButton1)
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jButton1)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 427, Short.MAX_VALUE))
+                    .addComponent(canvas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
+
+        jButton1.getAccessibleContext().setAccessibleName("Pc");
+        jButton2.getAccessibleContext().setAccessibleName("Pm");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private Canvas canvas1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JColorChooser jColorChooser1;
     // End of variables declaration//GEN-END:variables
 }

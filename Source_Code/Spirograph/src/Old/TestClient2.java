@@ -1,3 +1,5 @@
+package Old;
+
 /**
  *
  * @version 7 ott 2021
@@ -51,6 +53,7 @@ public class TestClient2 extends JFrame{
     @Override
     public void paint(Graphics g){
         super.paint(g);
+        System.out.print("DEAD");
         Graphics2D g2D = (Graphics2D)g;
         g2D.setRenderingHint(
              RenderingHints.KEY_TEXT_ANTIALIASING,
@@ -67,11 +70,15 @@ public class TestClient2 extends JFrame{
             g2D.drawLine((int)current.getX()+center, center+(int)current.getY(),
                     (int)current.getX()+center, center+(int)current.getY());
             
+            //controllo se il tasto d'interruzione è stato premuto, se è il caso
+            //fermo l'animazione
+            /*
             try {
                 Thread.sleep(1);
             } catch (InterruptedException ex) {
                 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
+            */
         }
     }
 
