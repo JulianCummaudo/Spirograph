@@ -14,19 +14,37 @@ import java.awt.geom.Point2D;
  */
 public class Canvas extends javax.swing.JPanel {
 
-    private Double radiusMobile = 80.0;
-    private Double radiusCenter = 50.0;
+    private Double radiusMobile;
+    private Double radiusCenter;
     private Double offset = 40.0;
+    private Double sizeCoefficent = 1.0;
     private boolean insideMode = true;
     private Point2D.Double current = new Point2D.Double(0,0);
     
-    // <editor-fold defaultstate="collapsed" desc="Setter">
+    // <editor-fold defaultstate="collapsed" desc="Setter&Getter">
+    public void changeInsideMode(){
+        this.insideMode = !this.insideMode;
+    }
+    
+    public boolean getInsideMode(){
+        return this.insideMode;
+    }
+    
+    public void setSizeCoefficent(Double size){
+        this.sizeCoefficent = size;
+        reloadRadiuses();
+    }
+    
+    public Double getSizeCoefficent(){
+        return this.sizeCoefficent;
+    }
+    
     public void setRadiusMobile(Double radius){
-        this.radiusMobile = radius;
+        this.radiusMobile = radius * sizeCoefficent;
     }
     
     public void setRadiusCenter(Double radius){
-        this.radiusCenter = radius;
+        this.radiusCenter = radius * sizeCoefficent;
     }
 
     public Double getOffset() {
@@ -37,12 +55,21 @@ public class Canvas extends javax.swing.JPanel {
         this.offset = offset;
     }
     // </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="Realoader">
+    public void reloadRadiuses(){
+        setRadiusCenter(radiusCenter);
+        setRadiusMobile(radiusMobile);
+        System.out.print("a");
+    }
+    // </editor-fold>
     
     
     /**
      * Creates new form Canvas
      */
     public Canvas() {
+        setRadiusMobile(80.0);
+        setRadiusCenter(50.0);
         initComponents();
     }
 
@@ -55,11 +82,11 @@ public class Canvas extends javax.swing.JPanel {
              RenderingHints.KEY_TEXT_ANTIALIASING,
              RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
         
-        g2D.setColor(Color.magenta);
+        g2D.setColor(Color.black);
         int centerX = (int)(this.getWidth()/2);
         int centerY = (int)(this.getHeight()/2);
         
-        for(Double i = 0.0; i < 6000; i += 1){
+        for(Double i = 0.0; i < 60000; i += 0.1){
 
             if(insideMode){
                 current = getInsidePoint(radiusCenter, radiusMobile, offset, i);
@@ -101,6 +128,7 @@ public class Canvas extends javax.swing.JPanel {
     }
     // </editor-fold>
     
+    // <editor-fold defaultstate="collapsed" desc="InterpolateTest">
     /**
     * Interpolating method
     * @param start start of the interval
@@ -118,6 +146,7 @@ public class Canvas extends javax.swing.JPanel {
         }
         return array;
     }
+    //</editor-fold>
     
     
     
