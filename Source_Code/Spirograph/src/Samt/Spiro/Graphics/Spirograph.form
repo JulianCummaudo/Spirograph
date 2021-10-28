@@ -23,47 +23,53 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Pc" min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="Pc30" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                  <Component id="Pc45" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                  <Component id="Pc50" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                  <Component id="Pc55" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                  <Component id="Pc60" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="Pc35" alignment="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="Pc40" alignment="0" pref="47" max="32767" attributes="0"/>
-                  </Group>
-                  <Component id="Pc65" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="canvas1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Pm" min="-2" pref="53" max="-2" attributes="0"/>
-                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="Pm50" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                          <Component id="Pm55" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                          <Component id="Pm60" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                          <Component id="Pm65" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Pc" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="Pc30" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="Pc45" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="Pc50" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="Pc55" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="Pc60" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="Pc35" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="Pc40" alignment="0" pref="47" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="Pc65" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="canvas1" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Pm" min="-2" pref="53" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                  <Component id="Pm50" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                                  <Component id="Pm55" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                                  <Component id="Pm60" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                                  <Component id="Pm65" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="Pm70" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="Pm75" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="Pm80" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="Pm85" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
-                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                      <Component id="Pm70" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="Pm75" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="Pm80" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="Pm85" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="SaveLayer" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="240" max="-2" attributes="0"/>
+                      <Component id="inside" min="-2" pref="77" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="ChangeLayer" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="323" max="-2" attributes="0"/>
-              <Component id="inside" min="-2" pref="77" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -118,8 +124,13 @@
                   </Group>
                   <Component id="canvas1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="inside" min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="inside" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="SaveLayer" min="-2" max="-2" attributes="0"/>
+                  <Component id="ChangeLayer" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -154,7 +165,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="428" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="406" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -415,6 +426,22 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insideActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="SaveLayer">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Save"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaveLayerActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ChangeLayer">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Change"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChangeLayerActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

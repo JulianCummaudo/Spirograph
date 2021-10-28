@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,14 +15,28 @@ import java.awt.geom.Point2D;
  */
 public class Canvas extends javax.swing.JPanel {
 
+    /**
+     * Questi valori sono quelli che cambiano in base alla grandezza.
+     * Il loro valore si basa sui fromButtonRadius, che sono i valori dei raggi
+     * presi direttamente dai bottoni senza essere considerati.
+     */
     private Double radiusMobile;
     private Double radiusCenter;
+    
+    private Double fromButtonRadiusMobile;
+    private Double fromButtonRadiusCenter;
+    
     private Double offset = 40.0;
     private Double sizeCoefficent = 1.0;
     private boolean insideMode = true;
     private Point2D.Double current = new Point2D.Double(0,0);
+    private ArrayList<ArrayList<Point2D>> drawings = new ArrayList<ArrayList<Point2D>>();
+    private int indexOfDrawing = 0;
     
     // <editor-fold defaultstate="collapsed" desc="Setter&Getter">
+    public void setIndexOfDrawing(int index){
+        this.indexOfDrawing = index;
+    }
     public void changeInsideMode(){
         this.insideMode = !this.insideMode;
     }
@@ -40,11 +55,21 @@ public class Canvas extends javax.swing.JPanel {
     }
     
     public void setRadiusMobile(Double radius){
-        this.radiusMobile = radius * sizeCoefficent;
+        this.fromButtonRadiusMobile = radius;
+        
+        reloadRadiusMobile();
+    }
+    public void setRadiusCenter(Double radius){
+        this.fromButtonRadiusCenter = radius;
+        reloadRadiusCenter();
     }
     
-    public void setRadiusCenter(Double radius){
-        this.radiusCenter = radius * sizeCoefficent;
+    public Double getRadiusMobile(){
+        return this.radiusMobile;
+    }
+    
+    public Double getRadiusCenter(){
+        return this.radiusCenter;
     }
 
     public Double getOffset() {
@@ -57,17 +82,28 @@ public class Canvas extends javax.swing.JPanel {
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Realoader">
     public void reloadRadiuses(){
-        setRadiusCenter(radiusCenter);
-        setRadiusMobile(radiusMobile);
-        System.out.print("a");
+        reloadRadiusMobile();
+        reloadRadiusCenter();
+    }
+    public void reloadRadiusMobile(){
+        this.radiusMobile = this.fromButtonRadiusMobile * (Math.min(this.getWidth(), this.getHeight()))/150;
+        setOffset(radiusMobile/4.5);
+    }
+    public void reloadRadiusCenter(){
+        this.radiusCenter = this.fromButtonRadiusCenter * (Math.min(this.getWidth(), this.getHeight()))/150;
     }
     // </editor-fold>
     
+    public void changeDrawing(ArrayList<Point2D> array){
+        this.drawings.add(array);
+        this.indexOfDrawing += 1;
+    }
     
     /**
      * Creates new form Canvas
      */
     public Canvas() {
+        //80 e 50 sono solo valori di default
         setRadiusMobile(80.0);
         setRadiusCenter(50.0);
         initComponents();
@@ -82,9 +118,10 @@ public class Canvas extends javax.swing.JPanel {
              RenderingHints.KEY_TEXT_ANTIALIASING,
              RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
         
-        g2D.setColor(Color.black);
+        g2D.setColor(Color.RED);
         int centerX = (int)(this.getWidth()/2);
         int centerY = (int)(this.getHeight()/2);
+        drawings.add(new ArrayList<Point2D>());
         
         for(Double i = 0.0; i < 60000; i += 0.1){
 
@@ -93,7 +130,7 @@ public class Canvas extends javax.swing.JPanel {
             }else{
                 current = getOutsidePoint(radiusCenter, radiusMobile, offset, i);
             }
-            
+            drawings.get(indexOfDrawing).add(current);
             g2D.drawLine((int)current.getX()+centerX, centerY+(int)current.getY(),
                     (int)current.getX()+centerX, centerY+(int)current.getY());
             /*
@@ -105,7 +142,7 @@ public class Canvas extends javax.swing.JPanel {
             */
         }
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="getIn&OutPoint">
     public Point2D.Double getOutsidePoint(Double pc, Double pm, 
             Double offset, Double angolo){
@@ -128,28 +165,6 @@ public class Canvas extends javax.swing.JPanel {
     }
     // </editor-fold>
     
-    // <editor-fold defaultstate="collapsed" desc="InterpolateTest">
-    /**
-    * Interpolating method
-    * @param start start of the interval
-    * @param end end of the interval
-    * @param count count of output interpolated numbers
-    * @return array of interpolated number with specified count
-    */
-    public static double[] interpolate(double start, double end, int count) {
-        if (count < 2) {
-            throw new IllegalArgumentException("interpolate: illegal count!");
-        }
-        double[] array = new double[count + 1];
-        for (int i = 0; i <= count; ++ i) {
-            array[i] = start + i * (end - start) / count;
-        }
-        return array;
-    }
-    //</editor-fold>
-    
-    
-    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -159,6 +174,8 @@ public class Canvas extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
