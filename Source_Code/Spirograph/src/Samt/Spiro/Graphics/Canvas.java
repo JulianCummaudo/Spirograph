@@ -125,6 +125,7 @@ public class Canvas extends javax.swing.JPanel {
              RenderingHints.KEY_TEXT_ANTIALIASING,
              RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
         
+        
         g2D.setColor(Color.RED);
         int centerX = (int)(this.getWidth()/2);
         int centerY = (int)(this.getHeight()/2);
@@ -138,7 +139,8 @@ public class Canvas extends javax.swing.JPanel {
             }else{
                 current = getOutsidePoint(radiusCenter, radiusMobile, offset, i);
             }
-            drawings.get(indexOfDrawing).add(current);
+            currentDrawing.addPointAndColor(current, Color.red);
+            
             g2D.drawLine((int)current.getX()+centerX, centerY+(int)current.getY(),
                     (int)current.getX()+centerX, centerY+(int)current.getY());
             
