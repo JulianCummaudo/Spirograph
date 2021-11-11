@@ -48,15 +48,8 @@ public class Spirograph extends javax.swing.JFrame implements ComponentListener 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Pc = new javax.swing.JButton();
         Pm = new javax.swing.JButton();
         canvas1 = new Samt.Spiro.Graphics.Canvas();
-        Pc30 = new javax.swing.JButton();
-        Pc45 = new javax.swing.JButton();
-        Pc40 = new javax.swing.JButton();
-        Pc50 = new javax.swing.JButton();
-        Pc55 = new javax.swing.JButton();
-        Pc60 = new javax.swing.JButton();
         Pm65 = new javax.swing.JButton();
         Pm60 = new javax.swing.JButton();
         Pm55 = new javax.swing.JButton();
@@ -65,17 +58,12 @@ public class Spirograph extends javax.swing.JFrame implements ComponentListener 
         Pm80 = new javax.swing.JButton();
         Pm75 = new javax.swing.JButton();
         Pm70 = new javax.swing.JButton();
-        Pc65 = new javax.swing.JButton();
-        Pc35 = new javax.swing.JButton();
         inside = new javax.swing.JButton();
         SaveLayer = new javax.swing.JButton();
         ChangeLayer = new javax.swing.JButton();
+        centralPointChoice1 = new Samt.Spiro.Graphics.CentralPointChoice();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        Pc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Pc.setText("Pc");
-        Pc.setPreferredSize(new java.awt.Dimension(53, 25));
 
         Pm.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Pm.setText("Pm");
@@ -84,72 +72,12 @@ public class Spirograph extends javax.swing.JFrame implements ComponentListener 
         canvas1.setLayout(canvas1Layout);
         canvas1Layout.setHorizontalGroup(
             canvas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 578, Short.MAX_VALUE)
+            .addGap(0, 515, Short.MAX_VALUE)
         );
         canvas1Layout.setVerticalGroup(
             canvas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 406, Short.MAX_VALUE)
         );
-
-        Pc30.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Pc30.setText("30");
-        Pc30.setToolTipText("");
-        Pc30.setPreferredSize(new java.awt.Dimension(53, 25));
-        Pc30.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pc30ActionPerformed(evt);
-            }
-        });
-
-        Pc45.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Pc45.setText("45");
-        Pc45.setToolTipText("");
-        Pc45.setPreferredSize(new java.awt.Dimension(53, 25));
-        Pc45.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pc45ActionPerformed(evt);
-            }
-        });
-
-        Pc40.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Pc40.setText("40");
-        Pc40.setToolTipText("");
-        Pc40.setPreferredSize(new java.awt.Dimension(53, 25));
-        Pc40.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pc40ActionPerformed(evt);
-            }
-        });
-
-        Pc50.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Pc50.setText("50");
-        Pc50.setToolTipText("");
-        Pc50.setPreferredSize(new java.awt.Dimension(53, 25));
-        Pc50.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pc50ActionPerformed(evt);
-            }
-        });
-
-        Pc55.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Pc55.setText("55");
-        Pc55.setToolTipText("");
-        Pc55.setPreferredSize(new java.awt.Dimension(53, 25));
-        Pc55.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pc55ActionPerformed(evt);
-            }
-        });
-
-        Pc60.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Pc60.setText("60");
-        Pc60.setToolTipText("");
-        Pc60.setPreferredSize(new java.awt.Dimension(53, 25));
-        Pc60.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pc60ActionPerformed(evt);
-            }
-        });
 
         Pm65.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Pm65.setText("65");
@@ -231,26 +159,6 @@ public class Spirograph extends javax.swing.JFrame implements ComponentListener 
             }
         });
 
-        Pc65.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Pc65.setText("65");
-        Pc65.setToolTipText("");
-        Pc65.setPreferredSize(new java.awt.Dimension(53, 25));
-        Pc65.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pc65ActionPerformed(evt);
-            }
-        });
-
-        Pc35.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Pc35.setText("35");
-        Pc35.setToolTipText("");
-        Pc35.setPreferredSize(new java.awt.Dimension(53, 25));
-        Pc35.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pc35ActionPerformed(evt);
-            }
-        });
-
         inside.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         inside.setText("Inside");
         inside.setToolTipText("");
@@ -284,18 +192,8 @@ public class Spirograph extends javax.swing.JFrame implements ComponentListener 
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Pc, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Pc30, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Pc45, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Pc50, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Pc55, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Pc60, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(Pc35, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addComponent(Pc40, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE))
-                            .addComponent(Pc65, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(centralPointChoice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
                         .addComponent(canvas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,29 +222,12 @@ public class Spirograph extends javax.swing.JFrame implements ComponentListener 
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(canvas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Pm)
-                            .addComponent(Pc, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Pc30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Pc35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Pc40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Pc45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Pc50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Pc55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Pc60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Pc65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Pm)
+                                .addGap(18, 18, 18)
                                 .addComponent(Pm50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Pm55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -361,9 +242,9 @@ public class Spirograph extends javax.swing.JFrame implements ComponentListener 
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Pm80, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Pm85, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(canvas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(Pm85, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(centralPointChoice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(inside, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -376,51 +257,7 @@ public class Spirograph extends javax.swing.JFrame implements ComponentListener 
     }// </editor-fold>//GEN-END:initComponents
 
     
-    // <editor-fold defaultstate="collapsed" desc="PcActionPerformed">
-    /**
-     * canvas1.setRadiusCenter(Double.parseDouble(evt.getActionCommand()));
-     * canvas1.repaint();
-     * */
-    private void Pc30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pc30ActionPerformed
-        canvas1.setRadiusCenter(Double.parseDouble(evt.getActionCommand()));
-        canvas1.repaint();
-    }//GEN-LAST:event_Pc30ActionPerformed
-
-    private void Pc35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pc35ActionPerformed
-        canvas1.setRadiusCenter(Double.parseDouble(evt.getActionCommand()));
-        canvas1.repaint();
-    }//GEN-LAST:event_Pc35ActionPerformed
-
-    private void Pc40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pc40ActionPerformed
-        canvas1.setRadiusCenter(Double.parseDouble(evt.getActionCommand()));
-        canvas1.repaint();
-    }//GEN-LAST:event_Pc40ActionPerformed
-
-    private void Pc45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pc45ActionPerformed
-        canvas1.setRadiusCenter(Double.parseDouble(evt.getActionCommand()));
-        canvas1.repaint();
-    }//GEN-LAST:event_Pc45ActionPerformed
-
-    private void Pc50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pc50ActionPerformed
-        canvas1.setRadiusCenter(Double.parseDouble(evt.getActionCommand()));
-        canvas1.repaint();
-    }//GEN-LAST:event_Pc50ActionPerformed
-
-    private void Pc55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pc55ActionPerformed
-        canvas1.setRadiusCenter(Double.parseDouble(evt.getActionCommand()));
-        canvas1.repaint();
-    }//GEN-LAST:event_Pc55ActionPerformed
-
-    private void Pc60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pc60ActionPerformed
-        canvas1.setRadiusCenter(Double.parseDouble(evt.getActionCommand()));
-        canvas1.repaint();
-    }//GEN-LAST:event_Pc60ActionPerformed
-
-    private void Pc65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pc65ActionPerformed
-        canvas1.setRadiusCenter(Double.parseDouble(evt.getActionCommand()));
-        canvas1.repaint();
-    }//GEN-LAST:event_Pc65ActionPerformed
-    // </editor-fold>
+   // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="PmActionPerformed">
     private void Pm50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pm50ActionPerformed
         canvas1.setRadiusMobile(Double.parseDouble(evt.getActionCommand()));
@@ -525,15 +362,6 @@ public class Spirograph extends javax.swing.JFrame implements ComponentListener 
     // <editor-fold defaultstate="collapsed" desc="JButton">
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ChangeLayer;
-    private javax.swing.JButton Pc;
-    private javax.swing.JButton Pc30;
-    private javax.swing.JButton Pc35;
-    private javax.swing.JButton Pc40;
-    private javax.swing.JButton Pc45;
-    private javax.swing.JButton Pc50;
-    private javax.swing.JButton Pc55;
-    private javax.swing.JButton Pc60;
-    private javax.swing.JButton Pc65;
     private javax.swing.JButton Pm;
     private javax.swing.JButton Pm50;
     private javax.swing.JButton Pm55;
@@ -545,6 +373,7 @@ public class Spirograph extends javax.swing.JFrame implements ComponentListener 
     private javax.swing.JButton Pm85;
     private javax.swing.JButton SaveLayer;
     private Samt.Spiro.Graphics.Canvas canvas1;
+    private Samt.Spiro.Graphics.CentralPointChoice centralPointChoice1;
     private javax.swing.JButton inside;
     // End of variables declaration//GEN-END:variables
     // </editor-fold>
