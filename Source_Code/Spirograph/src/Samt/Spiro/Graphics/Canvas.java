@@ -1,6 +1,7 @@
 package Samt.Spiro.Graphics;
 
 
+import Samt.Spiro.Helpers.Drawing;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -29,8 +30,11 @@ public class Canvas extends javax.swing.JPanel {
     private Double offset = 40.0;
     private Double sizeCoefficent = 1.0;
     private boolean insideMode = true;
+    
     private Point2D.Double current = new Point2D.Double(0,0);
+    
     private ArrayList<ArrayList<Point2D>> drawings = new ArrayList<ArrayList<Point2D>>();
+    private ArrayList<Drawing> drawings1 = new ArrayList<Drawing>();
     private int indexOfDrawing = 0;
     
     // <editor-fold defaultstate="collapsed" desc="Setter&Getter">
@@ -112,6 +116,9 @@ public class Canvas extends javax.swing.JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        
+        Drawing currentDrawing = new Drawing();
+        
         Graphics2D g2D = (Graphics2D)g;
         
         g2D.setRenderingHint(
@@ -121,10 +128,11 @@ public class Canvas extends javax.swing.JPanel {
         g2D.setColor(Color.RED);
         int centerX = (int)(this.getWidth()/2);
         int centerY = (int)(this.getHeight()/2);
-        drawings.add(new ArrayList<Point2D>());
         
+        //Thread
+        //<editor-fold defaultstate="collapsed" desc="Thread needed">
         for(Double i = 0.0; i < 60000; i += 0.1){
-
+            
             if(insideMode){
                 current = getInsidePoint(radiusCenter, radiusMobile, offset, i);
             }else{
@@ -133,14 +141,12 @@ public class Canvas extends javax.swing.JPanel {
             drawings.get(indexOfDrawing).add(current);
             g2D.drawLine((int)current.getX()+centerX, centerY+(int)current.getY(),
                     (int)current.getX()+centerX, centerY+(int)current.getY());
-            /*
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(TestClient.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            */
+            
+            // Se finisco il ciclo per interruzione o altro, aggiungo il
+            // disegno alla lista
         }
+        //</editor-fold>
+        drawings1.add(currentDrawing);
     }
     
     // <editor-fold defaultstate="collapsed" desc="getIn&OutPoint">
