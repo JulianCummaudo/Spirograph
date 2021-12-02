@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @version 11.11.2021
+ * @version 02.12.2021
  * @author Julian Cummaudo
  */
 public class Drawing {
@@ -18,7 +18,9 @@ public class Drawing {
         points.add(p);
         pointColor.add(c);
     }
-    
+    public void hideOrShowDrawing(){
+        this.visible = !this.visible;
+    }
     public Drawing(){
         
     }

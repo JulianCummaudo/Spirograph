@@ -2,16 +2,21 @@ package Samt.Spiro.Graphics;
 
 
 import Samt.Spiro.Helpers.Drawing;
+import java.awt.AWTException;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.Robot;
 import java.awt.geom.Point2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
 
 /**
  *
- * @version 14.10.2021
+ * @version 18.11.2021
  * @author Julian Cummaudo
  */
 public class Canvas extends javax.swing.JPanel {
@@ -28,16 +33,18 @@ public class Canvas extends javax.swing.JPanel {
     private Double fromButtonRadiusCenter;
     
     private Double offset = 40.0;
-    private Double sizeCoefficent = 1.0;
     private boolean insideMode = true;
     
     private Point2D.Double current = new Point2D.Double(0,0);
-    
-    private ArrayList<ArrayList<Point2D>> drawings = new ArrayList<ArrayList<Point2D>>();
+
     private ArrayList<Drawing> drawings1 = new ArrayList<Drawing>();
     private int indexOfDrawing = 0;
+    private Color pointColor = Color.RED;
     
     // <editor-fold defaultstate="collapsed" desc="Setter&Getter">
+    public void setpointcolor(Color col){
+        this.pointColor = col;
+    }
     public void setIndexOfDrawing(int index){
         this.indexOfDrawing = index;
     }
@@ -47,15 +54,6 @@ public class Canvas extends javax.swing.JPanel {
     
     public boolean getInsideMode(){
         return this.insideMode;
-    }
-    
-    public void setSizeCoefficent(Double size){
-        this.sizeCoefficent = size;
-        reloadRadiuses();
-    }
-    
-    public Double getSizeCoefficent(){
-        return this.sizeCoefficent;
     }
     
     public void setRadiusMobile(Double radius){
@@ -98,11 +96,28 @@ public class Canvas extends javax.swing.JPanel {
     }
     // </editor-fold>
     
-    public void changeDrawing(ArrayList<Point2D> array){
-        this.drawings.add(array);
+    public void changeDrawing(Drawing next){
+        this.drawings1.add(next);
         this.indexOfDrawing += 1;
     }
     
+    public void saveImage(){
+        BufferedImage imagebuf = null;
+        try {
+            imagebuf = new Robot().createScreenCapture(this.getBounds());
+        } catch (AWTException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }  
+         Graphics2D graphics2D = imagebuf.createGraphics();
+         this.paint(graphics2D);
+         try {
+            ImageIO.write(imagebuf,"jpeg", new File("immagine.jpeg"));
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("error");
+        }
+    }
     /**
      * Creates new form Canvas
      */
@@ -126,7 +141,7 @@ public class Canvas extends javax.swing.JPanel {
              RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
         
         
-        g2D.setColor(Color.RED);
+        g2D.setColor(this.pointColor);
         int centerX = (int)(this.getWidth()/2);
         int centerY = (int)(this.getHeight()/2);
         
@@ -139,7 +154,7 @@ public class Canvas extends javax.swing.JPanel {
             }else{
                 current = getOutsidePoint(radiusCenter, radiusMobile, offset, i);
             }
-            currentDrawing.addPointAndColor(current, Color.red);
+            currentDrawing.addPointAndColor(current, this.pointColor);
             
             g2D.drawLine((int)current.getX()+centerX, centerY+(int)current.getY(),
                     (int)current.getX()+centerX, centerY+(int)current.getY());
