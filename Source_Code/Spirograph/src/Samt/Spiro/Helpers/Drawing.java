@@ -18,9 +18,11 @@ public class Drawing {
         points.add(p);
         pointColor.add(c);
     }
+    
     public void hideOrShowDrawing(){
         this.visible = !this.visible;
     }
+    
     public Drawing(){
         
     }

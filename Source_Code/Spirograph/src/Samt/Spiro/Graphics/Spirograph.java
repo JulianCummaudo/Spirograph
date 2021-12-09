@@ -170,6 +170,7 @@ public class Spirograph extends javax.swing.JFrame implements ComponentListener 
     public void checkAndPerform(){
         for (Component component : this.getRootPane().getComponents()) {
             System.out.println("Percorro il componente: " + component);
+            System.out.println(component);
             //se il componente attuale è un JButton
             if (component instanceof javax.swing.JButton){
                     
