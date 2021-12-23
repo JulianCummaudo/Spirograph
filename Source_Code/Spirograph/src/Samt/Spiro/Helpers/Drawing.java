@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @version 02.12.2021
+ * @version 11.11.2021
  * @author Julian Cummaudo
  */
 public class Drawing {
@@ -24,7 +24,7 @@ public class Drawing {
     }
     
     public Drawing(){
-        
+        //15 minuti +-1 minuto
     }
     
 }

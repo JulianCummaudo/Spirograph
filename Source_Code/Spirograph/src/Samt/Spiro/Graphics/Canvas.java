@@ -16,10 +16,10 @@ import javax.imageio.ImageIO;
 
 /**
  *
- * @version 18.11.2021
+ * @version 14.10.2021
  * @author Julian Cummaudo
  */
-public class Canvas extends javax.swing.JPanel {
+public class Canvas extends javax.swing.JPanel implements Runnable{
 
     /**
      * Questi valori sono quelli che cambiano in base alla grandezza.
@@ -37,7 +37,7 @@ public class Canvas extends javax.swing.JPanel {
     
     private Point2D.Double current = new Point2D.Double(0,0);
 
-    private ArrayList<Drawing> drawings1 = new ArrayList<Drawing>();
+    private ArrayList<Drawing> drawings = new ArrayList<Drawing>();
     private int indexOfDrawing = 0;
     private Color pointColor = Color.RED;
     
@@ -58,7 +58,6 @@ public class Canvas extends javax.swing.JPanel {
     
     public void setRadiusMobile(Double radius){
         this.fromButtonRadiusMobile = radius;
-        
         reloadRadiusMobile();
     }
     public void setRadiusCenter(Double radius){
@@ -97,7 +96,7 @@ public class Canvas extends javax.swing.JPanel {
     // </editor-fold>
     
     public void changeDrawing(Drawing next){
-        this.drawings1.add(next);
+        this.drawings.add(next);
         this.indexOfDrawing += 1;
     }
     
@@ -163,7 +162,7 @@ public class Canvas extends javax.swing.JPanel {
             // disegno alla lista
         }
         //</editor-fold>
-        drawings1.add(currentDrawing);
+        drawings.add(currentDrawing);
     }
     
     // <editor-fold defaultstate="collapsed" desc="getIn&OutPoint">
@@ -211,6 +210,11 @@ public class Canvas extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    @Override
+    public void run() {
+        
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
